@@ -19,3 +19,5 @@ for i in range(0, end):
 print("Le mot à deviner est:")
 print()
 print(new_word)
+
+# good_letter
