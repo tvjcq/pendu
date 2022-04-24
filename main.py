@@ -1,8 +1,11 @@
 import random
+
 words_nul = ""
 word = ""
 new_word = ""
 g_letter = []
+
+
 def extract_words():
     f = open('words.txt', 'r')
     message = f.read()
@@ -26,10 +29,11 @@ def print_underscore():
     print("Le mot à deviner est:")
     print(new_word)
 
+
 def good_letter(w, l):
     global g_word
     global g_letter
-    g_letter = g_letter
+    verif = g_word
     nch = list(g_word)
     letter = list(w)
     max = len(w)
@@ -38,11 +42,15 @@ def good_letter(w, l):
             nch[i] = l
         elif l in g_letter:
             nch[i] = nch[i]
-            print("Tu l'a déjà dit")
+            print("Tu l'as déjà dit")
             break
         else:
             nch[i] = nch[i]
     g_word = "".join(nch)
+    if verif != g_word:
+        print("Bravo tu as trouvé une lettre !")
+    elif l not in g_letter:
+        print("Dommage mauvaise lettre")
     g_letter += [l]
     return g_word
 
@@ -57,3 +65,5 @@ while g_word != word:
     print()
     letter = input("Votre lettre : ")
     print(good_letter(word, letter))
+print()
+print("Bravo tu as trouvé le mot !")
