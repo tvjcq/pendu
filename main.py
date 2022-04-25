@@ -52,8 +52,10 @@ def test_letter(w, l):
     if verif != g_word:
         print("Bravo tu as trouvé une lettre !")
     elif l not in g_letter:
-        print("Dommage mauvaise lettre")
         point_verif += 1
+        print("Dommage mauvaise lettre")
+        print("Tu es à", point_verif, "erreur(s)")
+        print("Tu as le droit à 7 erreurs max")
     g_letter += [l]
     return g_word
 
