@@ -78,10 +78,7 @@ extract_words()
 choice_word()
 print_underscore()
 
-
 g_word = new_word
-
-
 
 boucle()
 
