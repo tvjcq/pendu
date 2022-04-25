@@ -69,6 +69,7 @@ while g_word != word and point_verif < 7:
     letter = input("Votre lettre : ")
     print(test_letter(word, letter))
 print()
+
 if g_word == word:
     print("Bravo tu as trouvé le mot !")
 else:
