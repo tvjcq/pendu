@@ -58,17 +58,32 @@ def test_letter(w, l):
     return g_word
 
 
+def boucle():
+    while g_word != word and point_verif < 7:
+        print()
+        letter = input("Votre lettre : ")
+        letter_list = len(letter)
+        if any(chr.isdigit() for chr in letter):
+            print("Pas un chiffre t'es con ou quoi ?")
+            boucle()
+        if letter_list > 1:
+            print("Une seule lettre t'es con toi")
+            boucle()
+
+        print(test_letter(word, letter))
+    print()
+
+
 extract_words()
 choice_word()
 print_underscore()
 
+
 g_word = new_word
 
-while g_word != word and point_verif < 7:
-    print()
-    letter = input("Votre lettre : ")
-    print(test_letter(word, letter))
-print()
+
+
+boucle()
 
 if g_word == word:
     print("Bravo tu as trouvé le mot !")
