@@ -1,4 +1,5 @@
 import random
+import time
 
 words_nul = ""
 word = ""
@@ -18,7 +19,6 @@ def extract_words():
 def choice_word():
     global word
     word = random.choice(words_nul)
-    print(word)
 
 
 def print_underscore():
@@ -74,3 +74,5 @@ if g_word == word:
     print("Bravo tu as trouvé le mot !")
 else:
     print("Dommage tu as perdu")
+    print("Le mot était", word)
+time.sleep(10)
