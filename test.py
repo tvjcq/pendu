@@ -4,7 +4,6 @@ words_nul = ""
 word = ""
 new_word = ""
 g_letter = []
-point_verif = 0
 
 
 def extract_words():
@@ -31,10 +30,9 @@ def print_underscore():
     print(new_word)
 
 
-def test_letter(w, l):
+def good_letter(w, l):
     global g_word
     global g_letter
-    global point_verif
     verif = g_word
     nch = list(g_word)
     letter = list(w)
@@ -44,7 +42,7 @@ def test_letter(w, l):
             nch[i] = l
         elif l in g_letter:
             nch[i] = nch[i]
-            print("Tu l'as déjà dit")
+            print("Tu l'a déjà dit")
             break
         else:
             nch[i] = nch[i]
@@ -53,7 +51,6 @@ def test_letter(w, l):
         print("Bravo tu as trouvé une lettre !")
     elif l not in g_letter:
         print("Dommage mauvaise lettre")
-        point_verif += 1
     g_letter += [l]
     return g_word
 
@@ -64,12 +61,7 @@ print_underscore()
 
 g_word = new_word
 
-while g_word != word and point_verif < 7:
+while g_word != word:
     print()
     letter = input("Votre lettre : ")
-    print(test_letter(word, letter))
-print()
-if g_word == word:
-    print("Bravo tu as trouvé le mot !")
-else:
-    print("Dommage tu as perdu")
+    print(good_letter(word, letter))
