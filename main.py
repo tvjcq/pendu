@@ -66,10 +66,10 @@ def boucle():
         letter = input("Votre lettre : ")
         letter_list = len(letter)
         if any(chr.isdigit() for chr in letter):
-            print("Pas un chiffre t'es con ou quoi ?")
+            print("Pas un chiffre !")
             boucle()
         if letter_list > 1:
-            print("Une seule lettre t'es con toi")
+            print("Une seule lettre !")
             boucle()
 
         print(test_letter(word, letter))
