@@ -36,12 +36,13 @@ def test_letter(w, l):
     global g_letter
     global point_verif
     verif = g_word
+    l = l.upper()
     nch = list(g_word)
     letter = list(w)
     max = len(w)
     for i in range(0, max):
         if letter[i] == l:
-            nch[i] = l
+            nch[i] = l.upper()
         elif l in g_letter:
             nch[i] = nch[i]
             print("Tu l'as déjà dit")
